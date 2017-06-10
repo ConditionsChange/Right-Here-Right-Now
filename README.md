@@ -11,7 +11,7 @@ User is bored and looking for something to do. User inputs location and somethin
 
 ## Sketch
 
-![Alt awesome-sketch](oursketch.jpg)
+![Alt awesome-sketch](image/oursketch.jpg)
 
 ## APIs to be Used:
 Google Maps, SeatGeek, OpenWeather, Fandango
