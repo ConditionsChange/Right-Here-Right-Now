@@ -3,7 +3,10 @@ var eventList = [];
 var eventLimit = 7;
 
 var currentTime = moment().utc().format("YY-MM-DD");
+var span = 3; //days
+var endTime = moment().utc().add(3,"days").format("YY-MM-DD");
 console.log(currentTime);
+console.log(endTime);
 
 var city = "Los+Angeles";
 var state = "CA";
@@ -12,7 +15,7 @@ var state = "CA";
 var queryURL = "https://api.seatgeek.com/2/events?";
 var clientID = "client_id=NzgwMTQ1M3wxNDk3MTIxNzA4LjE4";
 // var subject = "&q=sports"
-var datetime = "&datetime_utc.gt=" + currentTime;
+var datetime = "&datetime_utc.gte=" + currentTime + "&datetime_utc.lte=" + endTime;
 var loc = "&venue.state=" + state + "&venue.city=" + city;
 // var venueState & venueCity
 
