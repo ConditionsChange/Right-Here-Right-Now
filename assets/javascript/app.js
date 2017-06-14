@@ -63,13 +63,14 @@ $.ajax({
 			address: resEvents[i].venue.address,
 			location: resEvents[i].venue.extended_address,
 			date: moment(resEvents[i].datetime_local).format("ddd. DD MMMM YYYY hh:mm A"),
-			image: resEvents[i].performers[0].image
+			image: resEvents[i].performers[0].image,
+			url: resEvents[i].url
 		});
 
 		// console.log(moment(eventList[i].date).format("DD MMMM YYYY"));
 
 
-		eventCont = $("<div>").addClass("event");
+		eventCont = $("<a>").addClass("event").attr("href",eventList[i].url).attr("target","_blank");
 		eventCont.append($("<p>").text(eventList[i].title))
 			.append($("<p>").text(eventList[i].type))
 			.append($("<p>").text(eventList[i].address))
