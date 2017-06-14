@@ -9,6 +9,7 @@ console.log(currentTime);
 console.log(endTime);
 
 var city = "Los+Angeles";
+var zipCode = ""
 var state = "CA";
 
 // Query string
@@ -16,7 +17,25 @@ var queryURL = "https://api.seatgeek.com/2/events?";
 var clientID = "client_id=NzgwMTQ1M3wxNDk3MTIxNzA4LjE4";
 // var subject = "&q=sports"
 var datetime = "&datetime_utc.gte=" + currentTime + "&datetime_utc.lte=" + endTime;
-var loc = "&venue.state=" + state + "&venue.city=" + city;
+
+var loc = "";
+
+if (state !== "") {
+	loc+="&venue.state=" + state;
+}
+
+if (city !== "") {
+	loc+="&venue.city=" + city;
+}
+
+if (zipCode !== "") {
+	loc+="&venue.postal_code=" + zipCode;
+}
+
+// loc = "&venue.state=" + state + 
+// 	"&venue.city=" + city +
+// 	"&venue.postal_code=" + zipCode;
+
 // var venueState & venueCity
 
 // https://api.seatgeek.com/2/events/739515?callback=fireEvent&client_id=NzgwMTQ1M3wxNDk3MTIxNzA4LjE4
