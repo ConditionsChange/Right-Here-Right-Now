@@ -60,8 +60,11 @@ $.ajax({
 		eventList.push({
 			title: resEvents[i].title,
 			type: resEvents[i].type,
-			address: resEvents[i].venue.address,
-			location: resEvents[i].venue.extended_address,
+			venue: {
+				name: resEvents[i].venue.name,
+				address: resEvents[i].venue.address,
+				cityStateZip: resEvents[i].venue.extended_address
+			},
 			date: moment(resEvents[i].datetime_local).format("ddd. DD MMMM YYYY hh:mm A"),
 			image: resEvents[i].performers[0].image,
 			url: resEvents[i].url
@@ -72,9 +75,10 @@ $.ajax({
 
 		eventCont = $("<a>").addClass("event").attr("href",eventList[i].url).attr("target","_blank");
 		eventCont.append($("<p>").text(eventList[i].title))
-			.append($("<p>").text(eventList[i].type))
-			.append($("<p>").text(eventList[i].address))
-			.append($("<p>").text(eventList[i].location))
+			// .append($("<p>").text(eventList[i].type))
+			// .append($("<p>").text(eventList[i].address))
+			// .append($("<p>").text(eventList[i].location))
+			.append($("<p>").text(eventList[i].venue.name))
 			.append($("<p>").text(eventList[i].date));
 
 		var newImg = $("<img>");

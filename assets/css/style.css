@@ -17,3 +17,24 @@ img {
 	float: none;
 	border: 1px solid #000000;
 }
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+.event > p {
+	color: #000000;
+	margin: 5px; 
+}
