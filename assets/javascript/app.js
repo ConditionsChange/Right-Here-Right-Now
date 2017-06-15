@@ -74,12 +74,12 @@ $.ajax({
 
 
 		eventCont = $("<a>").addClass("event").attr("href",eventList[i].url).attr("target","_blank");
-		eventCont.append($("<p>").text(eventList[i].title))
+		eventCont.append($("<p>").addClass("eventTitle").text(eventList[i].title))
 			// .append($("<p>").text(eventList[i].type))
 			// .append($("<p>").text(eventList[i].address))
 			// .append($("<p>").text(eventList[i].location))
-			.append($("<p>").text(eventList[i].venue.name))
-			.append($("<p>").text(eventList[i].date));
+			.append($("<p>").addClass("venueName").text(eventList[i].venue.name))
+			.append($("<p>").addClass("eventDate").text(eventList[i].date));
 
 		var newImg = $("<img>");
 		if (eventList[i].image === null) {
@@ -103,5 +103,15 @@ $.ajax({
 	
 	console.log(eventList);
 });
+
+$(document).on("click", ".event", function() {
+	// console.log($(this).children(".venueName").text());
+	var eventVenue = $(this).children(".venueName").text();
+	var newSRC = "https://maps.google.com/maps?q=" + eventVenue + ", &t=&z=14&ie=UTF8&iwloc=&output=embed";
+	$("#gmap_canvas").attr("src", newSRC);
+	$("#map").show();
+});
+
+
 
 // for (var i = 0; i < eventList.length; i++)

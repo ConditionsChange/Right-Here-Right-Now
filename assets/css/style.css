@@ -38,3 +38,19 @@ a:active {
 	color: #000000;
 	margin: 5px; 
 }
+
+.mapouter {
+	overflow:hidden;
+	height:500px;
+	width:600px;
+}
+
+.gmap_canvas {
+	background:none!important;
+	height:500px;
+	width:600px;
+}
+
+#map {
+	display: none;
+}
