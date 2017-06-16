@@ -8,6 +8,14 @@ img {
 	min-height: 100px;
 }
 
+p {
+	margin: 10px;
+}
+
+.row {
+	margin-top: 10px;
+}
+
 #eventRow {
 	overflow-x: auto;
 	white-space: nowrap;
@@ -49,6 +57,10 @@ a:active {
 .event > p {
 	color: #ffffff;
 	margin: 5px; 
+}
+
+#map {
+	margin: 10px auto;
 }
 
 .mapouter {

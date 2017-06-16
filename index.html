@@ -18,11 +18,33 @@
 <body>
 
 	<div class="container">
+		<div class="row" id="locationRow">
+			<form>
+				<div class="form-group form-inline">
+					<label for="city">City</label>
+					<input class="form-control" id="city" type="text">
+
+					<label for="state">State</label>
+					<input class="form-control" id="state" type="text">
+
+					<label for="zip">Zip</label>
+					<input class="form-control" id="zip" type="text">
+
+				</div>
+
+				<p id="error"></p>
+
+				<button class="btn btn-primary" id="submit" type="submit">Submit</button>
+
+				<!-- <button class="btn btn-primary" id="update" type="submit">Update</button> -->
+			</form>
+		</div>
+
 		<div class="row text-center" id="eventRow"></div>
 
 		<div class="row mapouter" id="map">
 			<div class="gmap_canvas">
-				<iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=UCLA, &t=&z=14&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+				<iframe width="500" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=UCLA, &t=&z=14&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 				<a href="http://www.embedgooglemap.net">embedgooglemap.net</a>
 			</div>
 		</div>
