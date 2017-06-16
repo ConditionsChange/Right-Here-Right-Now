@@ -1,10 +1,10 @@
 // Declaring variables
 var eventList = [];
-var eventLimit = 10;
+var eventLimit = 5;
 
 var currentTime = moment().utc().format("YYYY-MM-DDTHH:mm:ss");
-var span = 3; //days
-var endTime = moment().utc().add(span,"days").format("YYYY-MM-DD");
+var span = 24; //hours
+var endTime = moment().utc().add(span,"hours").format("YYYY-MM-DD");
 console.log(currentTime);
 console.log(endTime);
 
@@ -94,7 +94,7 @@ $.ajax({
 
 		eventCont.prepend(newImg);
 
-		$("#test").append(eventCont);
+		$("#eventRow").append(eventCont);
 
 		if(eventList.length === eventLimit) {
 			i = resEvents.length;
