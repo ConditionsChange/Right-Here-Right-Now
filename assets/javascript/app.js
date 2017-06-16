@@ -1,5 +1,4 @@
 // Declaring variables
-var eventList = [];
 var eventLimit = 5;
 
 var currentTime = moment().utc().format("YYYY-MM-DDTHH:mm:ss");
@@ -44,10 +43,7 @@ $("#submit").on("click",function(event) {
 	console.log(state);
 	console.log(zipCode);
 
-	if ($("#city").val() === "" && 
-		$("#state").val() === "" && 
-		$("#zip").val() === "" 
-	){
+	if (city === "" && zipCode === "" && state === "" ) {
 
 		$("#error").html("At least one field is required");
 		$("#error").show();
@@ -69,6 +65,8 @@ $("#submit").on("click",function(event) {
 	if (zipCode !== "") {
 		loc+="&venue.postal_code=" + zipCode;
 	}
+
+	var eventList = [];
 
 	// Ajax call
 	$.ajax({
