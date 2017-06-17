@@ -59,6 +59,8 @@ $("#submit").on("click",function(event) {
 	}
 
 	if (city !== "") {
+		cityStrArr = city.split(" ");
+		city = cityStrArr.join("+");
 		loc+="&venue.city=" + city;
 	}
 
@@ -73,6 +75,7 @@ $("#submit").on("click",function(event) {
 		url: queryURL + clientID + datetime + loc,
 		method: 'GET'
 	}).done(function(response){
+		console.log(queryURL + clientID + datetime + loc);
 		console.log(response);
 		var resEvents = response.events;
 
