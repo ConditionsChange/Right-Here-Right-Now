@@ -33,7 +33,7 @@ $("#submit").on("click",function(event) {
 	event.preventDefault();
 
 	$("#eventRow").empty();
-	$("map").hide();
+	$("#map").hide();
 
 	var city = $("#city").val().trim();
 	var zipCode = $("#zip").val().trim();
