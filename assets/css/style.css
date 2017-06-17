@@ -4,8 +4,8 @@ html {
 }
 
 img {
-	max-height: 100px;
-	min-height: 100px;
+	height: 100px;
+	margin: auto;
 }
 
 p {

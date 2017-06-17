@@ -1,5 +1,5 @@
 // Declaring variables
-var eventLimit = 5;
+var eventLimit = 6;
 
 var currentTime = moment().utc().format("YYYY-MM-DDTHH:mm:ss");
 var span = 24; //hours
@@ -17,7 +17,6 @@ var clientID = "client_id=NzgwMTQ1M3wxNDk3MTIxNzA4LjE4";
 // var subject = "&q=sports"
 var datetime = "&datetime_utc.gte=" + currentTime + "&datetime_utc.lte=" + endTime;
 
-var eventRowLength = 5;
 
 // loc = "&venue.state=" + state + 
 // 	"&venue.city=" + city +
@@ -27,11 +26,15 @@ var eventRowLength = 5;
 
 // https://api.seatgeek.com/2/events/739515?callback=fireEvent&client_id=NzgwMTQ1M3wxNDk3MTIxNzA4LjE4
 
+$("#eventRow").slick({
+
+});
 
 $("#submit").on("click",function(event) {
 
 	event.preventDefault();
 
+	$("#eventRow").slick("unslick");
 	$("#eventRow").empty();
 	$("#map").hide();
 
@@ -101,8 +104,6 @@ $("#submit").on("click",function(event) {
 				url: resEvents[i].url
 			});
 
-			// console.log(moment(eventList[i].date).format("DD MMMM YYYY"));
-
 
 			eventCont = $("<a>").addClass("event").attr("href",eventList[i].url).attr("target","_blank");
 			eventCont.append($("<p>").addClass("eventTitle").text(eventList[i].title))
@@ -130,7 +131,16 @@ $("#submit").on("click",function(event) {
 			if(eventList.length === eventLimit) {
 				i = resEvents.length;
 			}
+
+			// $("#eventRow").slick("slickAdd","<div><h3>" + slideIndex + "</h3></div>");
+			// slideIndex++;
 		}
+
+		$("#eventRow").slick({
+			slidesToShow: 3,
+			slidesToScroll: 3,
+			infinite: false
+		});
 
 		console.log(eventList);
 	});
