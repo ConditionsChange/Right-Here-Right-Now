@@ -3,11 +3,6 @@ html {
 	overflow: auto;
 }
 
-img {
-	height: 100px;
-	margin: auto;
-}
-
 p {
 	margin: 10px;
 }
@@ -51,12 +46,19 @@ a:active {
 }
 
 .event > img {
+	height: 100px;
+	margin: auto;
 	border: 1px solid #ffffff;
 }
 
 .event > p {
 	color: #ffffff;
 	margin: 5px; 
+}
+
+.noEvent {
+	margin: 100px auto;
+	color: #ffffff;
 }
 
 #map {

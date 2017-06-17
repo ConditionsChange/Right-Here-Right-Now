@@ -84,7 +84,9 @@ $("#submit").on("click",function(event) {
 
 		if (resEvents.length === 0) {
 			console.log("No Events");
-			var noEvent = $("<p>").text("There were no events at this time").css("color","#ffffff");
+			// var newDiv = $("<div>").addClass("noEventDiv");
+			var noEvent = $("<p>").addClass("noEvent")
+								  .text("There were no events at this time");
 			$("#eventRow").append(noEvent);
 			return;
 		}
