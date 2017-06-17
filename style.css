@@ -1,3 +1,4 @@
 #movieRow{overflow-x: scroll; white-space: nowrap; padding: 5px 0}
+#searchBar{width: 60%}
 a{color: #000; font-size: 12px;}
 a:hover{text-decoration: none; color: #000}
