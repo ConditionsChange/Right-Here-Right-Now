@@ -181,7 +181,7 @@ function getWeather(cityName){
 	$("#weather-info").html("");
     var APIkey = "6f58f13c3025088168db93c787df5115";
     $.ajax({
-        url: "http://api.openweathermap.org/data/2.5/forecast?q=" +cityName+ "&appid=" + APIkey,
+        url: "https://api.openweathermap.org/data/2.5/forecast?q=" +cityName+ "&appid=" + APIkey,
         method: "GET"
     }).done(function(response){
         console.log(response.list);
