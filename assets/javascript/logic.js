@@ -316,7 +316,7 @@ function getEvents(city){
 
             var newImg = $("<img>");
             if (eventList[i].image === null) {
-                newImg.attr("src", "http://lorempixel.com/output/city-q-g-200-200-4.jpg");
+                newImg.attr("src", "https://lorempixel.com/output/city-q-g-200-200-4.jpg");
             }
 
             else {
