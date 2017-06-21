@@ -184,7 +184,7 @@ function getWeather(cityName){
         url: "https://api.openweathermap.org/data/2.5/forecast?q=" +cityName+ "&appid=" + APIkey,
         method: "GET"
     }).done(function(response){
-        console.log(response.list);
+        console.log("WORKING?");
         //Main Title Change
         var title_div = $("<h1 style='text-align:center'>Weather Forecast</h1>");
         var masterdiv = $("<div class='row' id='weather-info'></div>");
